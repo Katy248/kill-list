@@ -30,8 +30,18 @@ services:
       - "5050:80"
     networks:
       - postgres
+    depends_on:
+      - database
     
-  # backend:
+  backend:
+    container_name: backend_container
+#    image: golang:1.19
+    build: ./
+    command: /server
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
   # frontend:
 
 volumes:

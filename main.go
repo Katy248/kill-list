@@ -2,9 +2,11 @@ package main
 
 import (
 	"fmt"
+	s "kill-list/server"
 )
 
 func main() {
-	fmt.Print("Fuck you!")
+	fmt.Println("Fuck you!")
+	server := s.NewServer(s.WithName("my-server"))
+	fmt.Printf("%+v\n", server)
 }
-
