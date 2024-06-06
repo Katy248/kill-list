@@ -16,11 +16,11 @@ func InitDB() {
 	}
 }
 func CreateDB() *gorm.DB {
-	host := os.Getenv("DB_HOST")
-	user := os.Getenv("DB_USER")
-	password := os.Getenv("DB_PASSWORD")
-	name := os.Getenv("DB_NAME")
-	port := os.Getenv("DB_PORT")
+	host := os.Getenv("POSTGRES_HOST")
+	user := os.Getenv("POSTGRES_USER")
+	password := os.Getenv("POSTGRES_PASSWORD")
+	name := os.Getenv("POSTGRES_DB")
+	port := os.Getenv("POSTGRES_PORT")
 	timezone := "Moscow/Europe"
 
 	dsn := "host=" + host + " user=" + user + " password=" + password + " dbname=" + name + " port=" + port + " sslmode=disable TimeZone=" + timezone
