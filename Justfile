@@ -1,6 +1,6 @@
 
 default: help
-
+set shell := ["zsh", "-cu"]
 # Print help and exit
 help:
     @just -l
@@ -10,3 +10,13 @@ run:
 # Build program
 build:
     @go build .
+    
+# Compose
+compose:
+    sudo docker compose up -d
+
+uncompose:
+    source ./.env
+    sudo docker compose down
+    
+test:
